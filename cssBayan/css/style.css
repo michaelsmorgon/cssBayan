@@ -43,6 +43,10 @@ body {
     color: blue;
 }
 
+.accordion:hover .plus {
+    display: inline-block;
+}
+
 .accordion__item {
     border-top: 1px solid gray;
     padding-bottom: 10px;
@@ -61,6 +65,14 @@ body {
     transition: opacity 0.5s, visibility 0s, width 0.5s;
 }
 
+.accordion__item:has(.accordion__input:checked) .accordion__label > .accordion__title > .plus{
+    transform: rotate(45deg);
+}
+
+.accordion__item:hover .accordion__label > .accordion__title > .plus{
+    transform: rotate(45deg);
+}
+
 .accordion__label {
     cursor: pointer;
     display: block;
@@ -69,6 +81,13 @@ body {
 .accordion__title {
     display: flex;
     justify-content: space-between;
+}
+
+.plus {
+    display: none;
+	width: 1.5rem;
+	height: 1.5rem;
+	background: linear-gradient(to bottom, transparent 35%, #000 35%, #000 65%, transparent 65%), linear-gradient(to right, transparent 35%, #000 35%, #000 65%, transparent 65%);
 }
 
 .accordion__input {
