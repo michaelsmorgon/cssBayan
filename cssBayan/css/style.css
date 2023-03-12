@@ -1,5 +1,6 @@
 :root {
     --content-width: 1200px;
+    --image-width: calc((100% + 60px) / 2);
 }
 
 html {
@@ -34,12 +35,30 @@ body {
     padding: 0px 15px;
 }
 
+.accordion:hover .accordion__item {
+    color: black;
+}
+
+.accordion:hover .accordion__item:active {
+    color: blue;
+}
+
 .accordion__item {
     border-top: 1px solid gray;
     padding-bottom: 10px;
     cursor: pointer;
     color: blue;
     font-weight: bold;
+}
+
+.accordion__item:has(.accordion__input:checked) {
+    color: black;
+}
+
+.accordion__item:hover .accordion__body, .accordion__input:checked + .accordion__label > .accordion__body {
+    width: var(--image-width);
+    opacity: 1;
+    transition: opacity 0.5s, visibility 0s, width 0.5s;
 }
 
 .accordion__label {
@@ -62,6 +81,9 @@ body {
     padding-top: 10px;
     width: 0px;
     margin: 0px auto;
+    
+    opacity: 0;
+    transition: opacity 0.5s, visibility 0s, width 0.1s;
 }
 
 .accordion__body img {
