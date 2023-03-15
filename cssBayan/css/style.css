@@ -62,7 +62,7 @@ body {
 .accordion__item:hover .accordion__body, .accordion__input:checked + .accordion__label > .accordion__body {
     width: var(--image-width);
     opacity: 1;
-    transition: opacity 0.5s, visibility 0s, width 0.5s;
+    transition: opacity 1s, visibility 0s, width 1s;
 }
 
 .accordion__item:has(.accordion__input:checked) .accordion__label > .accordion__title > .plus{
@@ -102,7 +102,7 @@ body {
     margin: 0px auto;
     
     opacity: 0;
-    transition: opacity 0.5s, visibility 0s, width 0.1s;
+    transition: opacity 1s, visibility 0s, width 1s;
 }
 
 .accordion__body img {
